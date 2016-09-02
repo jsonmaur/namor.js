@@ -26,10 +26,10 @@ var name = namor.generate({ words: 3, numLen: 0 })
 var name = namor.generate({ manly: true })
 ```
 
-If you prefer UMD, you can also link directly to the build using [npmcdn](https://npmcdn.com).
+If you prefer UMD, you can also link directly to the build using [unpkg](https://unpkg.com).
 
 ```html
-<script src="https://npmcdn.com/namor/namor.min.js"></script>
+<script src="https://unpkg.com/namor/namor.min.js"></script>
 ```
 
 #### Some Examples
