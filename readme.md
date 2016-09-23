@@ -72,6 +72,8 @@ primal-attack-kick
 
 #### .generate (options)
 
+Generates a new name.
+
 - **options**
   - **words** - The number of words to include in the generated name. Must be a positive integer no higher than 4.
 
@@ -89,6 +91,14 @@ primal-attack-kick
 
     > Type: `boolean`  
     > Default: `false`
+
+#### .isValid (name)
+
+Checks whether a name is a valid for use as a subdomain.
+
+- **name** - The name to check.
+
+  > Type: `string`  
 
 <a name="license"></a>
 ## License

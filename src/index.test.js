@@ -7,4 +7,5 @@ import namor from './index'
 
 test('exports', (t) => {
   t.is(typeof namor.generate, 'function')
+  t.is(typeof namor.isValid, 'function')
 })

@@ -37,9 +37,8 @@
     "build:data": "rm -f data.json && ./node_modules/.bin/babel-node data/build",
     "build:browser": "rm -f namor.min.js && UMD=true browserify -g uglifyify -t babelify -t envify src/umd -o namor.min.js",
     "build:node": "rm -rf lib && babel src -d lib --no-comments",
-    "build": "npm-run-all build:*",
     "watch": "npm run build:node -- -w -s",
-    "prepublish": "npm run build"
+    "prepublish": "npm-run-all build:*"
   },
   "devDependencies": {
     "ava": "0.16.0",
@@ -49,15 +48,15 @@
     "babel-register": "6.14.0",
     "babelify": "7.3.0",
     "browserify": "13.1.0",
-    "coveralls": "2.11.12",
+    "coveralls": "2.11.14",
     "envify": "3.4.1",
-    "glob": "7.0.6",
-    "npm-run-all": "3.0.0",
-    "nyc": "8.1.0",
-    "snazzy": "4.0.1",
+    "glob": "7.1.0",
+    "npm-run-all": "3.1.0",
+    "nyc": "8.3.0",
+    "snazzy": "5.0.0",
     "source-map-support": "0.4.2",
-    "standard": "8.0.0",
-    "uglifyify": "3.0.2"
+    "standard": "8.1.0",
+    "uglifyify": "3.0.3"
   },
   "babel": {
     "presets": [
