@@ -1,13 +1,13 @@
 {
   "name": "namor",
   "version": "0.3.0",
-  "description": "A url-friendly name generator",
-  "author": "Jason Maurer",
+  "description": "a subdomain name generator",
+  "author": "Zab",
   "license": "MIT",
-  "homepage": "http://namor.maur.co",
+  "homepage": "https://zab.github.io/namor/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jsonmaur/namor.git"
+    "url": "git+https://github.com/zab/namor.git"
   },
   "keywords": [
     "name",

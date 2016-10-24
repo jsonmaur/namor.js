@@ -1,7 +1,7 @@
 # Namor
 
-[![Build Status](https://travis-ci.org/jsonmaur/namor.svg?branch=master)](https://travis-ci.org/jsonmaur/namor)
-[![Coverage Status](https://coveralls.io/repos/github/jsonmaur/namor/badge.svg?branch=master)](https://coveralls.io/github/jsonmaur/namor?branch=master)
+[![Build Status](https://travis-ci.org/zab/namor.svg?branch=master)](https://travis-ci.org/zab/namor)
+[![Coverage Status](https://coveralls.io/repos/github/zab/namor/badge.svg?branch=master)](https://coveralls.io/github/zab/namor?branch=master)
 
 A name generator for Javascript that generates random, url-friendly names. This comes in handy if you need to generate unique subdomains (like Heroku does), or unique names for anything else. You can also specify a "manly" mode, which only generates names of a rugged nature. Works in Node.js and web browsers.
 
@@ -103,4 +103,4 @@ Checks whether a name is a valid for use as a subdomain.
 <a name="license"></a>
 ## License
 
-[MIT](LICENSE) © [Jason Maurer](http://maur.co)
+[MIT](LICENSE) © [Zab](https://zab.io)
