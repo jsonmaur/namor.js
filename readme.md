@@ -103,4 +103,4 @@ Checks whether a name is a valid for use as a subdomain.
 <a name="license"></a>
 ## License
 
-[MIT](LICENSE) © [Zab](https://zab.io)
+[MIT](license) © [Zab](https://zab.io)
