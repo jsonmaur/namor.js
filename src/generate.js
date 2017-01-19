@@ -4,31 +4,38 @@ import { randomFromArray, randomNumber } from './random'
 /**
  * generate a random name
  * @param {int} wordCount - The number of words to include
- * @param {int} trailingNumLen - The length of the appended number
+ * @param {int} numCount - The length of the appended number
  */
-export default function (options = {}) {
-  if (!options.numLen && options.numLen !== 0) {
-    options.numLen = 4
+export default function (opts = {}) {
+  /* start deprecations */
+  if (opts.numLen) {
+    console.log('namor: "numLen" is now deprecated, use "numCount" instead')
+    opts.numCount = opts.numLen
   }
-  const numberLength = parseInt(options.numLen, 10)
-
-  if (!options.words && options.words !== 0) {
-    options.words = 2
+  if (opts.words) {
+    console.log('namor: "words" is now depcrecated, use "wordCount" instead')
+    opts.wordCount = opts.words
   }
-  const wordCount = parseInt(options.words, 10)
+  /* end deprecations */
 
-  if (wordCount < 1) {
+  opts.numCount = !opts.numCount && opts.numCount !== 0
+    ? 4 : parseInt(opts.numCount, 10)
+
+  opts.wordCount = !opts.wordCount && opts.wordCount !== 0
+    ? 2 : parseInt(opts.wordCount, 10)
+
+  if (opts.wordCount < 1) {
     throw new Error('word count must be above 0')
-  } else if (wordCount > 4) {
+  }
+  if (opts.wordCount > 4) {
     throw new Error('word count cannot be above 4')
   }
-
-  if (numberLength < 0) {
-    throw new Error('trailing number length must be above 0')
+  if (opts.numCount < 0) {
+    throw new Error('number length must be above 0')
   }
 
   let pattern
-  switch (wordCount) {
+  switch (opts.wordCount) {
     case 1:
       pattern = 'noun'
       break
@@ -48,14 +55,14 @@ export default function (options = {}) {
   const splitPattern = pattern.split('|')
 
   for (let i = 0; i < splitPattern.length; i++) {
-    const wordsToChooseFrom = options.manly
+    const wordsToChooseFrom = opts.manly
       ? data.manly[`${splitPattern[i]}s`]
       : data[`${splitPattern[i]}s`]
 
     name += randomFromArray(wordsToChooseFrom) + '-'
   }
 
-  name += numberLength ? randomNumber(numberLength) : ''
+  name += opts.numCount ? randomNumber(opts.numCount) : ''
   /* remove trailing dash */
   if (name.slice(-1) === '-') name = name.slice(0, -1)
 

@@ -6,7 +6,7 @@ const server = http.createServer((req, res) => {
     trailing_nums: 2,
     manly_mode: true,
     generated_name: namor.generate({
-      numLen: 2,
+      numCount: 2,
       manly: true
     })
   }, null, 2)

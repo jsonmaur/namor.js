@@ -20,7 +20,7 @@ var namor = require('namor')
 var name = namor.generate()
 
 /* generate with 3 words and no numbers */
-var name = namor.generate({ words: 3, numLen: 0 })
+var name = namor.generate({ wordCount: 3, numCount: 0 })
 
 /* generate manly names */
 var name = namor.generate({ manly: true })
@@ -29,7 +29,6 @@ var name = namor.generate({ manly: true })
 #### Some Examples
 
 ```bash
-# Regular Names
 pricey-note-4568
 soggy-sock-2003
 wing-command-4446
@@ -45,8 +44,7 @@ tearful-texture
 pretty-ship
 chivalrous-look
 enchanting-plant
-
-# Manly Names
+### manly ###
 bronco-brimstone-3314
 pure-fireball-2782
 carnal-glory-10756
@@ -69,14 +67,14 @@ primal-attack-kick
 Generates a new name.
 
 - **options**
-  - **words** - The number of words to include in the generated name. Must be a positive integer no higher than 4.
+  - **wordCount** - The number of words to include in the generated name. Must be a positive integer no higher than 4.
 
     > Type: `integer`  
     > Default: `2`  
     > Min: `1`  
     > Max: `4`
 
-  - **numLen** - The length of the random trailing number. Must be a positive integer. It can also be set to `0` to exclude a trailing number.
+  - **numCount** - The length of the random trailing number. Must be a positive integer. It can also be set to `0` to exclude a trailing number.
 
     > Type: `integer`  
     > Default: `4`

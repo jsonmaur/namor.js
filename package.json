@@ -4,7 +4,7 @@
   "description": "A domain-safe name generator",
   "author": "Jason Maurer",
   "license": "MIT",
-  "homepage": "https://jsonmaur.github.io/namor/",
+  "homepage": "https://github.com/jsonmaur/namor#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jsonmaur/namor.git"
