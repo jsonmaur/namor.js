@@ -1,7 +1,7 @@
 # Namor
 
-[![Build Status](https://travis-ci.org/zab/namor.svg?branch=master)](https://travis-ci.org/zab/namor)
-[![Coverage Status](https://coveralls.io/repos/github/zab/namor/badge.svg?branch=master)](https://coveralls.io/github/zab/namor?branch=master)
+[![Build Status](https://travis-ci.org/jsonmaur/namor.svg?branch=master)](https://travis-ci.org/jsonmaur/namor)
+[![Coverage Status](https://coveralls.io/repos/github/jsonmaur/namor/badge.svg?branch=master)](https://coveralls.io/github/jsonmaur/namor?branch=master)
 
 A name generator for Node that generates random, url-friendly names. This comes in handy if you need to generate unique subdomains (like Heroku does), or unique names for anything else. If manly mode is enabled for those who need it, only names of a rugged nature will be generated.
 

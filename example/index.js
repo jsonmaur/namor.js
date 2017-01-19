@@ -1,14 +1,14 @@
 const http = require('http')
-const namor = require('../dist')
+const namor = require('namor')
 
 const server = http.createServer((req, res) => {
   const payload = JSON.stringify({
+    trailing_nums: 2,
+    manly_mode: true,
     generated_name: namor.generate({
       numLen: 2,
       manly: true
-    }),
-    manly_mode: true,
-    trailing_nums: 2
+    })
   }, null, 2)
 
   res.setHeader('Content-Type', 'application/json')

@@ -1,0 +1,11 @@
+{
+  "name": "namor-example",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "namor": "*"
+  }
+}
