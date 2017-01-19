@@ -2,12 +2,12 @@
   "name": "namor",
   "version": "0.3.0",
   "description": "A domain-safe name generator",
-  "author": "Zab",
+  "author": "Jason Maurer",
   "license": "MIT",
-  "homepage": "https://zab.github.io/namor/",
+  "homepage": "https://jsonmaur.github.io/namor/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zab/namor.git"
+    "url": "git+https://github.com/jsonmaur/namor.git"
   },
   "keywords": [
     "name",
@@ -20,42 +20,35 @@
   ],
   "files": [
     "assets/",
-    "lib/",
+    "dist/",
     "data.json",
-    "namor.min.js",
     "license",
     "readme.md"
   ],
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test:lint": "standard --verbose | snazzy",
     "test:unit": "rm -rf .nyc_output coverage && nyc ava src/**/*.test.js -a",
     "test:coverage": "nyc report -r=lcov",
-    "pretest": "npm run build:data",
-    "test": "npm-run-all test:*",
+    "test": "npm run build:data && npm-run-all test:*",
     "coveralls": "cat coverage/lcov.info | coveralls",
     "build:data": "rm -f data.json && ./node_modules/.bin/babel-node data/build",
-    "build:browser": "rm -f namor.min.js && UMD=true browserify -g uglifyify -t babelify -t envify src/umd -o namor.min.js",
-    "build:node": "rm -rf lib && babel src -d lib --no-comments",
+    "build:node": "rm -rf dist && babel src -d dist --no-comments",
     "watch": "npm run build:node -- -w -s",
     "prepublish": "npm-run-all build:*"
   },
   "devDependencies": {
-    "ava": "0.16.0",
+    "ava": "0.17.0",
     "babel-cli": "6.18.0",
     "babel-preset-latest": "6.16.0",
     "babel-register": "6.18.0",
-    "babelify": "7.3.0",
-    "browserify": "13.1.1",
-    "coveralls": "2.11.14",
-    "envify": "3.4.1",
+    "coveralls": "2.11.15",
     "glob": "7.1.1",
-    "npm-run-all": "3.1.1",
-    "nyc": "8.3.2",
-    "snazzy": "5.0.0",
-    "source-map-support": "0.4.5",
-    "standard": "8.4.0",
-    "uglifyify": "3.0.4"
+    "npm-run-all": "4.0.1",
+    "nyc": "10.1.2",
+    "snazzy": "6.0.0",
+    "source-map-support": "0.4.10",
+    "standard": "8.6.0"
   },
   "babel": {
     "presets": [

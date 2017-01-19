@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/zab/namor.svg?branch=master)](https://travis-ci.org/zab/namor)
 [![Coverage Status](https://coveralls.io/repos/github/zab/namor/badge.svg?branch=master)](https://coveralls.io/github/zab/namor?branch=master)
 
-A name generator for Javascript that generates random, url-friendly names. This comes in handy if you need to generate unique subdomains (like Heroku does), or unique names for anything else. You can also specify a "manly" mode, which only generates names of a rugged nature. Works in Node.js and web browsers.
+A name generator for Node that generates random, url-friendly names. This comes in handy if you need to generate unique subdomains (like Heroku does), or unique names for anything else. If manly mode is enabled for those who need it, only names of a rugged nature will be generated.
 
 > *Please Note: Generated names are not guaranteed to always be unique. To reduce the chances of collision, you can increase the length of the trailing number (see below). Always make sure you check your database before assuming a generated value is unique.*
 
@@ -24,12 +24,6 @@ var name = namor.generate({ words: 3, numLen: 0 })
 
 /* generate manly names */
 var name = namor.generate({ manly: true })
-```
-
-If you prefer UMD, you can also link directly to the build using [unpkg](https://unpkg.com).
-
-```html
-<script src="https://unpkg.com/namor/namor.min.js"></script>
 ```
 
 #### Some Examples
@@ -100,7 +94,6 @@ Checks whether a name is a valid for use as a subdomain.
 
   > Type: `string`  
 
-<a name="license"></a>
 ## License
 
-[MIT](license) © [Zab](https://zab.io)
+[MIT](license) © [Jason Maurer](http://maur.co)
