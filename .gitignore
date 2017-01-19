@@ -1,10 +1,8 @@
-.DS_Store
-node_modules
-npm-debug.log
-
-lib
 .nyc_output
+node_modules
+dist
 coverage
 
+.DS_Store
+npm-debug.log
 data.json
-namor.min.js

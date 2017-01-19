@@ -34,8 +34,9 @@
     "coveralls": "cat coverage/lcov.info | coveralls",
     "build:data": "rm -f data.json && ./node_modules/.bin/babel-node data/build",
     "build:node": "rm -rf dist && babel src -d dist --no-comments",
+    "build": "npm-run-all build:*",
     "watch": "npm run build:node -- -w -s",
-    "prepublish": "npm-run-all build:*"
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "ava": "0.17.0",
