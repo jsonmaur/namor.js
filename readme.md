@@ -30,40 +30,7 @@ var name = namor.generate({ words: 3, numbers: 0 })
 var name = namor.generate({ manly: true })
 ```
 
-#### Some Examples
-
-```bash
-pricey-note
-soggy-sock
-wing-command
-paper-rely
-historical-team
-goat-catch
-dapper-rat
-neat-mist
-open-experience
-marvelous-belief
-holiday-steer
-tearful-texture
-pretty-ship
-chivalrous-look
-enchanting-plant
-
-### manly ###
-bronco-brimstone
-pure-fireball
-carnal-glory
-saber-strike
-ballistic-iron
-hardened-jerky
-potent-bourbon
-avenged-falcon
-almighty-dog-run
-deep-flames-dread
-fiery-forge-conquer
-pummeled-brawn-triumph
-primal-attack-kick
-```
+[See it in action](https://namor-example-mlcpnkahch.now.sh/?words=2&numbers=2) or [experience manly mode](https://namor-example-mlcpnkahch.now.sh/?manly=true).
 
 ## Word Stats
 
