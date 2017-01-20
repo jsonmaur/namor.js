@@ -18,7 +18,6 @@ describe('unit: generator', () => {
   })
 
   it('generate deprecations', () => {
-    expect(generate({ words: 1 })).to.match(/^[a-z]*-[0-9]{4}$/)
     expect(generate({ words: 1, numLen: 0 })).to.match(/^[a-z]*$/)
   })
 

@@ -2,16 +2,11 @@ import data from '../data.json'
 import { randomFromArray, randomNumber } from './random'
 
 export default function (opts = {}) {
-  /* start of deprecations */
+  /* deprecations */
   if (opts.numLen || opts.numLen === 0) {
     console.log('namor: "numLen" is now deprecated, use "numbers" instead')
     opts.numbers = opts.numLen
   }
-  if (opts.words || opts.words === 0) {
-    console.log('namor: "words" is now depcrecated, use "words" instead')
-    opts.words = opts.words
-  }
-  /* end of deprecations */
 
   /* generate the name */
   const name = addTrailingNumber(
