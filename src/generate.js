@@ -4,19 +4,19 @@ import { randomFromArray, randomNumber } from './random'
 export default function (opts = {}) {
   /* start of deprecations */
   if (opts.numLen || opts.numLen === 0) {
-    console.log('namor: "numLen" is now deprecated, use "numCount" instead')
-    opts.numCount = opts.numLen
+    console.log('namor: "numLen" is now deprecated, use "numbers" instead')
+    opts.numbers = opts.numLen
   }
   if (opts.words || opts.words === 0) {
-    console.log('namor: "words" is now depcrecated, use "wordCount" instead')
-    opts.wordCount = opts.words
+    console.log('namor: "words" is now depcrecated, use "words" instead')
+    opts.words = opts.words
   }
   /* end of deprecations */
 
   /* generate the name */
   const name = addTrailingNumber(
-    processPattern(getPattern(opts.wordCount), opts.manly),
-    opts.numCount
+    processPattern(getPattern(opts.words), opts.manly),
+    opts.numbers
   )
 
   /* ensure final subdomain isn't too long */
@@ -29,21 +29,21 @@ export default function (opts = {}) {
 
 /**
  * Returns a language pattern based on the word count of the name.
- * @param {integer} wordCount - the number of words to use
+ * @param {integer} words - the number of words to use
  * @return {array} a list (in order) of the language pattern
  */
-export function getPattern (wordCount = 2) {
-  wordCount = parseInt(wordCount, 10)
+export function getPattern (words = 2) {
+  words = parseInt(words, 10)
 
-  if (wordCount < 1) {
+  if (words < 1) {
     throw new Error('word count must be above 0')
   }
-  if (wordCount > 4) {
+  if (words > 4) {
     throw new Error('word count cannot be above 4')
   }
 
   let pattern
-  switch (wordCount) {
+  switch (words) {
     case 1:
       pattern = 'noun'
       break
