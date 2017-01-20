@@ -65,6 +65,22 @@ pummeled-brawn-triumph
 primal-attack-kick
 ```
 
+## Word Stats
+
+The following stats can help you make a decision on how many trailing numbers to use. This data is based on the words we have in our dictionary files.
+
+- 1-word combinations: 1,319
+- 2-word combinations: 3,016,553
+- 3-word combinations: 1,720,200,230
+- 4-word combinations: 2,268,944,103,370
+
+##### Manly Mode
+
+- 1-word combinations: 282
+- 2-word combinations: 110,826
+- 3-word combinations: 9,487,044
+- 4-word combinations: 2,675,346,408
+
 ## API
 
 #### .generate (options)
