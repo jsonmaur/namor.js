@@ -17,6 +17,7 @@ describe('unit: generator', () => {
     expect(() => generate({ wordCount: -1 })).to.throw(Error)
     expect(() => generate({ wordCount: 5 })).to.throw(Error)
     expect(() => generate({ numCount: -1 })).to.throw(Error)
+    expect(() => generate({ numCount: 60 })).to.throw(Error)
   })
 
   it('generate deprecations', () => {

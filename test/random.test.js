@@ -23,7 +23,12 @@ describe('unit: random', () => {
     testLength(50)
     testLength(100)
 
-    expect(random.randomNumber).to.not.throw
+    /* try/catch is needed to get the coverage :| */
+    try {
+      random.randomNumber()
+    } catch (err) {
+      expect(err).to.not.be.null
+    }
     expect(random.randomNumber.bind(null, 0)).to.throw
   })
 })

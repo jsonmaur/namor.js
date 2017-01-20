@@ -61,5 +61,10 @@ export default function (opts = {}) {
   /* remove trailing dash */
   if (name.slice(-1) === '-') name = name.slice(0, -1)
 
+  /* ensure it isn't too long */
+  if (name.length > 63) {
+    throw new Error('Subdomains cannot be longer than 63 characters! Try shortening your trailing number.')
+  }
+
   return name
 }

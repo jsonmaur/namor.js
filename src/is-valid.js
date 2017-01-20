@@ -1,8 +1,18 @@
 import data from '../data.json'
 
-export default function (name) {
-  const testRegex = /^[\w].[\w-]{3,48}[\w]$/.test(name)
-  const testBlacklist = data.blacklist.indexOf(name) === -1
+/**
+ * tests whether a string is a valid subdomain or not.
+ * also checks whether it is blacklisted.
+ * @param {sstring} name - the subdomain name to check
+ * @return {boolean} whether it is valid
+ */
+export default function (name, opts = {}) {
+  opts.blacklist = !opts.blacklist && opts.blacklist !== false
+    ? true : opts.blacklist
 
-  return testRegex && testBlacklist
+  const regexResult = /^[\w](?:[\w-]{0,61}[\w])?$/.test(name)
+
+  return opts.blacklist
+    ? regexResult && data.blacklist.indexOf(name) === -1
+    : regexResult
 }

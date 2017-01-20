@@ -3,6 +3,7 @@ import isValid from '../src/is-valid'
 
 describe('unit: is-valid', () => {
   it('isValid', () => {
+    expect(isValid('a')).to.be.true
     expect(isValid('my-website')).to.be.true
     expect(isValid('-my-website')).to.be.false
     expect(isValid('my-website-')).to.be.false
@@ -11,9 +12,9 @@ describe('unit: is-valid', () => {
     expect(isValid('$mywebsite')).to.be.false
     expect(isValid('mywebsite!')).to.be.false
     expect(isValid('my website')).to.be.false
-    expect(isValid('myweb')).to.be.false
-    expect(isValid('mywebsitemywebsitemywebsitemywebsitemywebsitemywebsite')).to.be.false
+    expect(isValid('mywebsitemywebsitemywebsitemywebsitemywebsitemywebsitemywebsitemywebsite')).to.be.false
     expect(isValid('login')).to.be.false
     expect(isValid('authentication')).to.be.false
+    expect(isValid('login', { blacklist: false })).to.be.true
   })
 })

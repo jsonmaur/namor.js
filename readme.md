@@ -84,13 +84,19 @@ Generates a new name.
     > Type: `boolean`  
     > Default: `false`
 
-#### .isValid (name)
+#### .isValid (name, options)
 
-Checks whether a name is a valid for use as a subdomain.
+Checks whether a name is a valid for use as a subdomain. Will also check the name against a [blacklist](data/blacklist.txt), unless ommitted in the options.
 
 - **name** - The name to check.
 
   > Type: `string`  
+
+- **options**
+  - **blacklist** - Whether to check subdomains against the [blacklist](data/blacklist.txt), which is a predefined set of reserved subdomains as well as vulgar language.
+
+    > Type: `boolean`  
+    > Default: true
 
 ## License
 
