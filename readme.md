@@ -83,6 +83,11 @@ Generates a new name.
     > Type: `integer`  
     > Default: `4`
 
+  - **char** - The character to use between words when generating a name.
+
+    > Type: `string`  
+    > Default: `-`
+
   - **manly** - If set to true, manly mode will be enabled which will generate names of a rugged nature.
 
     > Type: `boolean`  

@@ -13,6 +13,7 @@ describe('unit: generator', () => {
     expect(generate({ numbers: 20 })).to.match(/^[a-z]*-[a-z]*-[0-9]{20}$/)
     expect(generate({ words: 1, numbers: 0 })).to.match(/^[a-z]*$/)
     expect(generate({ manly: true })).to.match(/^[a-z]*-[a-z]*-[0-9]{4}$/)
+    expect(generate({ char: '_' })).to.match(/^[a-z]*_[a-z]*_[0-9]{4}$/)
     expect(() => generate({ numbers: -1 })).to.throw(Error)
     expect(() => generate({ numbers: 60 })).to.throw(Error)
   })

@@ -10,8 +10,8 @@ export default function (opts = {}) {
 
   /* generate the name */
   const name = addTrailingNumber(
-    processPattern(getPattern(opts.words), opts.manly),
-    opts.numbers
+    processPattern(getPattern(opts.words), opts.char, opts.manly),
+    opts.numbers, opts.char
   )
 
   /* ensure final subdomain isn't too long */
@@ -62,7 +62,7 @@ export function getPattern (words = 2) {
  * @param {array} pattern - the pattern to use
  * @return {string} the concated string
  */
-export function processPattern (pattern, manly) {
+export function processPattern (pattern, char, manly) {
   const fills = pattern.map(type => {
     const wordsToChooseFrom = manly
       ? data.manly[`${type}s`]
@@ -71,7 +71,7 @@ export function processPattern (pattern, manly) {
     return randomFromArray(wordsToChooseFrom)
   })
 
-  return fills.join('-')
+  return fills.join(char || '-')
 }
 
 /**
@@ -80,12 +80,12 @@ export function processPattern (pattern, manly) {
  * @param {integer} len - the length of the trailing number
  * @return {string} the new name
  */
-export function addTrailingNumber (name, len = 4) {
+export function addTrailingNumber (name, len = 4, char = '-') {
   len = parseInt(len, 10)
 
   if (len < 0) {
     throw new Error('number length must be above 0')
   }
 
-  return name + (len ? '-' + randomNumber(len) : '')
+  return name + (len ? char + randomNumber(len) : '')
 }
