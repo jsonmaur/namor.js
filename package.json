@@ -28,44 +28,39 @@
   "main": "dist/index.js",
   "scripts": {
     "test:lint": "standard --verbose | snazzy",
-    "test:unit": "rm -rf .nyc_output coverage && nyc ava src/**/*.test.js -a",
+    "test:unit": "nyc mocha test -r babel-register",
     "test:coverage": "nyc report -r=lcov",
     "test": "npm run build:data && npm-run-all test:*",
     "coveralls": "cat coverage/lcov.info | coveralls",
-    "build:data": "rm -f data.json && ./node_modules/.bin/babel-node data/build",
-    "build:node": "rm -rf dist && babel src -d dist --no-comments",
+    "build:data": "rm -f data.json && babel-node data/build",
+    "build:node": "rm -rf dist && babel src -d dist",
     "build": "npm-run-all build:*",
     "watch": "npm run build:node -- -w -s",
     "prepublish": "npm run build"
   },
   "devDependencies": {
-    "ava": "0.17.0",
     "babel-cli": "6.18.0",
     "babel-preset-latest": "6.16.0",
     "babel-register": "6.18.0",
+    "chai": "3.5.0",
     "coveralls": "2.11.15",
     "glob": "7.1.1",
+    "mocha": "3.2.0",
     "npm-run-all": "4.0.1",
     "nyc": "10.1.2",
     "snazzy": "6.0.0",
     "source-map-support": "0.4.10",
     "standard": "8.6.0"
   },
+  "standard": {
+    "globals": [
+      "describe",
+      "it"
+    ]
+  },
   "babel": {
     "presets": [
       "latest"
-    ],
-    "ignore": [
-      "**/*.test.js"
-    ]
-  },
-  "ava": {
-    "require": "babel-register"
-  },
-  "nyc": {
-    "require": "babel-register",
-    "include": [
-      "src"
     ]
   }
 }

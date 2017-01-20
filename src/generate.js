@@ -1,18 +1,13 @@
 import data from '../data.json'
 import { randomFromArray, randomNumber } from './random'
 
-/**
- * generate a random name
- * @param {int} wordCount - The number of words to include
- * @param {int} numCount - The length of the appended number
- */
 export default function (opts = {}) {
   /* start deprecations */
-  if (opts.numLen) {
+  if (opts.numLen || opts.numLen === 0) {
     console.log('namor: "numLen" is now deprecated, use "numCount" instead')
     opts.numCount = opts.numLen
   }
-  if (opts.words) {
+  if (opts.words || opts.words === 0) {
     console.log('namor: "words" is now depcrecated, use "wordCount" instead')
     opts.wordCount = opts.words
   }
