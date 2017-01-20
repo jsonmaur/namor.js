@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import generate, { getPattern, processPattern } from '../src/generate'
+import generate, { getPattern, processPattern, addTrailingNumber } from '../src/generate'
 
 describe('unit: generator', () => {
   it('generate', () => {
@@ -22,10 +22,18 @@ describe('unit: generator', () => {
     expect(generate({ words: 1, numLen: 0 })).to.match(/^[a-z]*$/)
   })
 
-  it.only('getPattern', () => {
+  it('getPattern', () => {
     expect(getPattern(2).join('-')).to.match(/^[a-z]*-[a-z]*$/)
     expect(getPattern('2').join('-')).to.match(/^[a-z]*-[a-z]*$/)
-    expect(() => getPattern({ wordCount: 0 })).to.throw(Error)
-    expect(() => getPattern({ wordCount: 5 })).to.throw(Error)
+    expect(() => getPattern(0)).to.throw(Error)
+    expect(() => getPattern(5)).to.throw(Error)
+  })
+
+  it('processPattern', () => {
+    expect(processPattern(['noun', 'verb'])).to.match(/^[a-z]*-[a-z]*$/)
+  })
+
+  it('addTrailingNumber', () => {
+    expect(addTrailingNumber('hi', 2)).to.match(/^hi-[0-9]{2}$/)
   })
 })

@@ -13,17 +13,11 @@ export default function (opts = {}) {
   }
   /* end of deprecations */
 
-  opts.numCount = !opts.numCount && opts.numCount !== 0
-    ? 4 : parseInt(opts.numCount, 10)
-
-  if (opts.numCount < 0) {
-    throw new Error('number length must be above 0')
-  }
-
-  let name = processPattern(getPattern(opts.wordCount), opts.manly)
-
-  /* add random number to end if specified */
-  name += opts.numCount ? '-' + randomNumber(opts.numCount) : ''
+  /* generate the name */
+  const name = addTrailingNumber(
+    processPattern(getPattern(opts.wordCount), opts.manly),
+    opts.numCount
+  )
 
   /* ensure final subdomain isn't too long */
   if (name.length > 63) {
@@ -83,4 +77,20 @@ export function processPattern (pattern, manly) {
   })
 
   return fills.join('-')
+}
+
+/**
+ * Generates and adds a random number to the end of a name.
+ * @param {string} name - the name to append to
+ * @param {integer} len - the length of the trailing number
+ * @return {string} the new name
+ */
+export function addTrailingNumber (name, len = 4) {
+  len = parseInt(len, 10)
+
+  if (len < 0) {
+    throw new Error('number length must be above 0')
+  }
+
+  return name + (len ? '-' + randomNumber(len) : '')
 }
