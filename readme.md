@@ -44,6 +44,7 @@ tearful-texture
 pretty-ship
 chivalrous-look
 enchanting-plant
+
 ### manly ###
 bronco-brimstone-3314
 pure-fireball-2782
