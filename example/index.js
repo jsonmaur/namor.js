@@ -2,15 +2,15 @@ const http = require('http')
 const namor = require('namor')
 
 const server = http.createServer((req, res) => {
-  const payload = JSON.stringify({
+  const options = {
     words: 2,
     numbers: 2,
     manly: true,
-    generated_name: namor.generate({
-      words: 2,
-      numbers: 2,
-      manly: true
-    })
+  }
+
+  const payload = JSON.stringify({
+    options,
+    generated_name: namor.generate(options)
   }, null, 2)
 
   res.setHeader('Content-Type', 'application/json')
