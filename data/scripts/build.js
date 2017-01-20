@@ -3,7 +3,7 @@ import path from 'path'
 import glob from 'glob'
 
 const data = {}
-const dataPath = path.resolve(__dirname, '../data')
+const dataPath = path.resolve(__dirname, '../')
 
 /**
  * assigns values to an object, creating keys in
@@ -37,7 +37,7 @@ glob(`${dataPath}/**/*.txt`, (err, files) => {
     assign(data, keyPath, words)
   })
 
-  const output = path.resolve(__dirname, '../data.json')
+  const output = path.resolve(__dirname, '../../data.json')
   fs.writeFileSync(output, JSON.stringify(data))
 })
 

@@ -2,6 +2,7 @@ abide
 accelerate
 accept
 accomplish
+accuse
 achieve
 acquire
 acted
@@ -9,6 +10,7 @@ activate
 adapt
 add
 address
+adjust
 administer
 admire
 admit
@@ -30,11 +32,14 @@ apologize
 appear
 applaud
 applied
+apply
 appoint
 appraise
 appreciate
+approach
 approve
 arbitrate
+are
 argue
 arise
 arrange
@@ -45,6 +50,7 @@ ask
 assemble
 assess
 assist
+assume
 assure
 attach
 attack
@@ -73,6 +79,7 @@ beg
 begin
 behave
 behold
+believe
 belong
 bend
 beset
@@ -128,6 +135,7 @@ cast
 catalog
 catch
 cause
+celebrate
 challenge
 change
 charge
@@ -157,6 +165,7 @@ color
 comb
 come
 command
+commit
 communicate
 compare
 compete
@@ -172,6 +181,7 @@ concern
 conclude
 conduct
 confess
+confirm
 confront
 confuse
 connect
@@ -186,6 +196,7 @@ continue
 contract
 control
 convert
+convince
 coordinate
 copy
 correct
@@ -200,6 +211,7 @@ crash
 crawl
 create
 creep
+criticize
 critique
 cross
 crush
@@ -236,6 +248,7 @@ determine
 develop
 devise
 diagnose
+differ
 dig
 direct
 disagree
@@ -243,6 +256,7 @@ disappear
 disapprove
 disarm
 discover
+discuss
 dislike
 dispense
 display
@@ -253,6 +267,7 @@ dive
 divert
 divide
 do
+does
 double
 doubt
 draft
@@ -277,13 +292,17 @@ edited
 educate
 eliminate
 embarrass
+emphasize
 employ
 empty
+enable
 enacted
 encourage
+encouraging
 end
 endure
 enforce
+engage
 engineer
 enhance
 enjoy
@@ -309,6 +328,7 @@ expedite
 experiment
 explain
 explode
+explore
 express
 extend
 extract
@@ -392,6 +412,7 @@ hang
 happen
 harass
 harm
+has
 hate
 haunt
 head
@@ -400,6 +421,7 @@ heap
 hear
 heat
 help
+hesitate
 hide
 hit
 hold
@@ -418,11 +440,14 @@ ignore
 illustrate
 imagine
 implement
+imply
 impress
 improve
 improvise
 include
+incorporate
 increase
+indicate
 induce
 influence
 inform
@@ -432,6 +457,7 @@ injure
 inlay
 innovate
 input
+insist
 inspect
 inspire
 install
@@ -450,9 +476,12 @@ interview
 introduce
 invent
 inventory
+invest
 investigate
 invite
+involve
 irritate
+is
 itch
 jail
 jam
@@ -513,6 +542,7 @@ man
 manage
 manipulate
 manufacture
+manufacturing
 map
 march
 mark
@@ -526,7 +556,6 @@ measure
 meddle
 mediate
 meet
-melt
 melt
 memorize
 mend
@@ -578,6 +607,7 @@ order
 organize
 oriented
 originate
+ought
 overcome
 overdo
 overdraw
@@ -668,6 +698,7 @@ punch
 puncture
 punish
 purchase
+pursue
 push
 put
 qualify
@@ -681,6 +712,7 @@ raise
 rank
 rate
 reach
+react
 read
 realign
 realize
@@ -705,8 +737,10 @@ rejoice
 relate
 relax
 release
+relieve
 rely
 remain
+remaining
 remember
 remind
 remove
@@ -720,12 +754,14 @@ report
 represent
 reproduce
 request
+require
 rescue
 research
 resolve
 respond
 restored
 restructure
+retain
 retire
 retrieve
 return
@@ -769,6 +805,7 @@ search
 secure
 see
 seek
+seem
 select
 sell
 send
@@ -781,6 +818,7 @@ settle
 sew
 shade
 shake
+shall
 shape
 share
 shave
@@ -889,6 +927,7 @@ structure
 study
 stuff
 sublet
+submit
 subtract
 succeed
 suck
@@ -902,6 +941,7 @@ support
 suppose
 surprise
 surround
+survive
 suspect
 suspend
 swear
@@ -927,6 +967,7 @@ tease
 telephone
 tell
 tempt
+tend
 terrify
 test
 thank
@@ -987,6 +1028,7 @@ upset
 use
 utilize
 vanish
+vary
 verbalize
 verify
 vex
@@ -1029,6 +1071,7 @@ wobble
 wonder
 work
 worry
+would
 wrap
 wreck
 wrestle

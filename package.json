@@ -32,7 +32,7 @@
     "test:coverage": "nyc report -r=lcov",
     "test": "npm run build:data && npm-run-all test:*",
     "coveralls": "cat coverage/lcov.info | coveralls",
-    "build:data": "rm -f data.json && babel-node data/build",
+    "build:data": "rm -f data.json && babel-node data/scripts/build",
     "build:node": "rm -rf dist && babel src -d dist",
     "build": "npm-run-all build:*",
     "watch": "npm run build:node -- -w -s",
