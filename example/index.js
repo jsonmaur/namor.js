@@ -3,8 +3,9 @@ const namor = require('namor')
 
 const server = http.createServer((req, res) => {
   const payload = JSON.stringify({
-    trailing_nums: 2,
-    manly_mode: true,
+    words: 2,
+    numbers: 2,
+    manly: true,
     generated_name: namor.generate({
       words: 2,
       numbers: 2,
