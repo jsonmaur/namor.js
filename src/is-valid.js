@@ -1,8 +1,8 @@
 import data from '../data.json'
 
 /**
- * tests whether a string is a valid subdomain or not.
- * also checks whether it is blacklisted.
+ * Tests whether a string is a valid subdomain or not.
+ * Will also check whether it is blacklisted.
  * @param {sstring} name - the subdomain name to check
  * @return {boolean} whether it is valid
  */

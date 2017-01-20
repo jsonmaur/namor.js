@@ -2,7 +2,7 @@ import data from '../data.json'
 import { randomFromArray, randomNumber } from './random'
 
 export default function (opts = {}) {
-  /* start deprecations */
+  /* start of deprecations */
   if (opts.numLen || opts.numLen === 0) {
     console.log('namor: "numLen" is now deprecated, use "numCount" instead')
     opts.numCount = opts.numLen
@@ -11,31 +11,49 @@ export default function (opts = {}) {
     console.log('namor: "words" is now depcrecated, use "wordCount" instead')
     opts.wordCount = opts.words
   }
-  /* end deprecations */
+  /* end of deprecations */
 
   opts.numCount = !opts.numCount && opts.numCount !== 0
     ? 4 : parseInt(opts.numCount, 10)
 
-  opts.wordCount = !opts.wordCount && opts.wordCount !== 0
-    ? 2 : parseInt(opts.wordCount, 10)
-
-  if (opts.wordCount < 1) {
-    throw new Error('word count must be above 0')
-  }
-  if (opts.wordCount > 4) {
-    throw new Error('word count cannot be above 4')
-  }
   if (opts.numCount < 0) {
     throw new Error('number length must be above 0')
   }
 
+  let name = processPattern(getPattern(opts.wordCount), opts.manly)
+
+  /* add random number to end if specified */
+  name += opts.numCount ? '-' + randomNumber(opts.numCount) : ''
+
+  /* ensure final subdomain isn't too long */
+  if (name.length > 63) {
+    throw new Error('Subdomains cannot be longer than 63 characters! Try shortening your trailing number.')
+  }
+
+  return name
+}
+
+/**
+ * Returns a language pattern based on the word count of the name.
+ * @param {integer} wordCount - the number of words to use
+ * @return {array} a list (in order) of the language pattern
+ */
+export function getPattern (wordCount = 2) {
+  wordCount = parseInt(wordCount, 10)
+
+  if (wordCount < 1) {
+    throw new Error('word count must be above 0')
+  }
+  if (wordCount > 4) {
+    throw new Error('word count cannot be above 4')
+  }
+
   let pattern
-  switch (opts.wordCount) {
+  switch (wordCount) {
     case 1:
       pattern = 'noun'
       break
     case 2:
-    default:
       pattern = randomFromArray(['adjective|noun', 'noun|verb'])
       break
     case 3:
@@ -46,25 +64,23 @@ export default function (opts = {}) {
       break
   }
 
-  let name = ''
-  const splitPattern = pattern.split('|')
+  return pattern.split('|')
+}
 
-  for (let i = 0; i < splitPattern.length; i++) {
-    const wordsToChooseFrom = opts.manly
-      ? data.manly[`${splitPattern[i]}s`]
-      : data[`${splitPattern[i]}s`]
+/**
+ * Fills a language pattern with actual words from our dictionary,
+ * and turns it into a pipe-cased string.
+ * @param {array} pattern - the pattern to use
+ * @return {string} the concated string
+ */
+export function processPattern (pattern, manly) {
+  const fills = pattern.map(type => {
+    const wordsToChooseFrom = manly
+      ? data.manly[`${type}s`]
+      : data[`${type}s`]
 
-    name += randomFromArray(wordsToChooseFrom) + '-'
-  }
+    return randomFromArray(wordsToChooseFrom)
+  })
 
-  name += opts.numCount ? randomNumber(opts.numCount) : ''
-  /* remove trailing dash */
-  if (name.slice(-1) === '-') name = name.slice(0, -1)
-
-  /* ensure it isn't too long */
-  if (name.length > 63) {
-    throw new Error('Subdomains cannot be longer than 63 characters! Try shortening your trailing number.')
-  }
-
-  return name
+  return fills.join('-')
 }

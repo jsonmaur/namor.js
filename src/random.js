@@ -1,5 +1,5 @@
 /**
- * picks a random value from an array
+ * Picks a random value from an array
  * @param {array} arr - The array to pick from
  * @returns {any} The value at the random key
  */
@@ -8,7 +8,7 @@ export function randomFromArray (arr) {
 }
 
 /**
- * generates a random number and returns as string to prevent limits
+ * Generates a random number and returns as string to prevent limits
  * @param {int} size - The number of digits to return
  * @returns {string} The generated random number (in string format)
  */
