@@ -7,7 +7,7 @@
     <br> <br> <br>
 </div>
 
-A name generator for Node that generates random, url-friendly names. This comes in handy if you need to generate unique subdomains (like Heroku does), or unique names for anything else. If manly mode is enabled for those who need it, only names of a rugged nature will be generated.
+A name generator for Node that generates random, url-friendly names. This comes in handy if you need to generate unique subdomains (like Heroku does), or unique names for anything else. If manly mode is enabled (for those who understand its importance), only names of a rugged nature will be generated.
 
 > *Please Note: Generated names are not guaranteed to always be unique. To reduce the chances of collision, you can increase the length of the trailing number (see below). Always make sure you check your database before assuming a generated value is unique.*
 
