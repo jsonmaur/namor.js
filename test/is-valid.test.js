@@ -13,8 +13,8 @@ describe('unit: is-valid', () => {
     expect(isValid('mywebsite!')).to.be.false
     expect(isValid('my website')).to.be.false
     expect(isValid('mywebsitemywebsitemywebsitemywebsitemywebsitemywebsitemywebsitemywebsite')).to.be.false
-    expect(isValid('login')).to.be.false
-    expect(isValid('authentication')).to.be.false
-    expect(isValid('login', { blacklist: false })).to.be.true
+    expect(isValid('login')).to.be.true
+    expect(isValid('login', { blacklist: true })).to.be.false
+    expect(isValid('authentication', { blacklist: true })).to.be.false
   })
 })
