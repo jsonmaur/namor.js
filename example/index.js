@@ -5,7 +5,7 @@ const server = http.createServer((req, res) => {
   const options = {
     words: 2,
     numbers: 2,
-    manly: true,
+    manly: true
   }
 
   const payload = JSON.stringify({
