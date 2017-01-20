@@ -20,7 +20,7 @@ npm install namor --save
 ```javascript
 var namor = require('namor')
 
-/* defaults to two words and 4 trailing numbers */
+/* defaults to two words and 2 trailing numbers */
 var name = namor.generate()
 
 /* generate with 3 words and no numbers */
@@ -33,15 +33,15 @@ var name = namor.generate({ manly: true })
 #### Some Examples
 
 ```bash
-pricey-note-4568
-soggy-sock-2003
-wing-command-4446
-paper-rely-1152
-historical-team-4142
-goat-catch-8858
-dapper-rat-3125
-neat-mist-1260
-open-experience-2643
+pricey-note
+soggy-sock
+wing-command
+paper-rely
+historical-team
+goat-catch
+dapper-rat
+neat-mist
+open-experience
 marvelous-belief
 holiday-steer
 tearful-texture
@@ -50,14 +50,14 @@ chivalrous-look
 enchanting-plant
 
 ### manly ###
-bronco-brimstone-3314
-pure-fireball-2782
-carnal-glory-10756
-saber-strike-5734
-ballistic-iron-4512
-hardened-jerky-4148
-potent-bourbon-3517
-avenged-falcon-7282
+bronco-brimstone
+pure-fireball
+carnal-glory
+saber-strike
+ballistic-iron
+hardened-jerky
+potent-bourbon
+avenged-falcon
 almighty-dog-run
 deep-flames-dread
 fiery-forge-conquer
@@ -98,7 +98,7 @@ Generates a new name.
   - **numbers** - The length of the random trailing number. Must be a positive integer. It can also be set to `0` to exclude a trailing number.
 
     > Type: `integer`  
-    > Default: `4`
+    > Default: `2`
 
   - **char** - The character to use between words when generating a name.
 

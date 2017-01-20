@@ -80,7 +80,7 @@ export function processPattern (pattern, char, manly) {
  * @param {integer} len - the length of the trailing number
  * @return {string} the new name
  */
-export function addTrailingNumber (name, len = 4, char = '-') {
+export function addTrailingNumber (name, len = 2, char = '-') {
   len = parseInt(len, 10)
 
   if (len < 0) {
