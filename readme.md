@@ -9,12 +9,12 @@
 
 A name generator for Node that generates random, url-friendly names. This comes in handy if you need to generate unique subdomains (like Heroku does), or unique names for anything else. It can check against a blacklist to prevent malicious subdomains, and if manly mode is enabled (for those who understand its importance), only names of a rugged nature will be generated.
 
-> *Please Note: Generated names are not guaranteed to always be unique. To reduce the chances of collision, you can increase the length of the trailing number (see below). Always make sure you check your database before assuming a generated value is unique.*
+> *Please Note: Generated names are not always guaranteed to be unique. To reduce the chances of collision, you can increase the length of the trailing number ([see here for collision stats](#collision)). Always be sure to check your database before assuming a generated value is unique.*
 
 ## Getting Started
 
 ```bash
-npm install namor --save
+$ npm install namor --save
 ```
 
 ```javascript
@@ -32,7 +32,8 @@ const name = namor.generate({ manly: true })
 
 [See it in action here](https://namor-example-mlcpnkahch.now.sh/?words=2&numbers=2) or [experience manly mode](https://namor-example-mlcpnkahch.now.sh/?manly=true).
 
-## Word Stats
+<a name="collision"></a>
+## Collision Stats
 
 The following stats give you the total number of permutations based on the word count, and can help you make a decision on how many trailing numbers you should use for uniqueness. This data is based on the number of words we currently have in our [dictionary files](data/).
 
@@ -50,7 +51,7 @@ The following stats give you the total number of permutations based on the word 
 
 ## API
 
-#### .generate (options:Object)
+### .generate (options:Object)
 
 Generates a new name, in all its glory.
 
@@ -60,7 +61,7 @@ Generates a new name, in all its glory.
     > Type: `integer`  
     > Default: `2`
 
-  - **numbers** - The number of digits in the random trailing number. Must be a positive integer. It can also be set to `0` to *exclude* a trailing number.
+  - **numbers** - The number of digits in the random trailing number. Must be a positive integer or `0` to *exclude* a trailing number.
 
     > Type: `integer`  
     > Default: `2`
@@ -70,22 +71,21 @@ Generates a new name, in all its glory.
     > Type: `string`  
     > Default: `-`
 
-  - **manly** - If set to true, manly mode will be enabled which will generate names of a rugged nature (be aware this limits the number of dictionary words, creating a higher probability of collision).
+  - **manly** - Whether to enable manly mode, which will generate names of a rugged nature. Be aware this limits the number of dictionary words, creating a higher chance of collision.
 
     > Type: `boolean`  
     > Default: `false`
 
-#### .isValid (name:String, options:Object)
+### .isValid (name:String, options:Object)
 
-Checks whether a name is a valid for use as a subdomain. Will also check the name against a [blacklist](data/blacklist.txt), unless specified in the options.
+Checks whether a name is a valid for use as a subdomain. Can also check the name against a [blacklist](data/blacklist.txt) if specified.
 
 - **name** - The name to check.
 
-  > Type: `string`  
-  > Required
+  > Type: `string`
 
 - **options**
-  - **blacklist** - Whether to check subdomains against the [blacklist](data/blacklist.txt), which is a predefined set of reserved subdomains as well as vulgar language.
+  - **blacklist** - Whether to check the name against the [blacklist](data/blacklist.txt), which is a predefined set of reserved subdomains as well as vulgar language.
 
     > Type: `boolean`  
     > Default: false
