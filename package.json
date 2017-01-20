@@ -1,6 +1,6 @@
 {
   "name": "namor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A domain-safe name generator",
   "author": "Jason Maurer",
   "license": "MIT",
