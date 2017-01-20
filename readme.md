@@ -1,6 +1,6 @@
 <div align="center">
     <br>
-    <img src="assets/logo.png?raw=true">
+    <img src="https://raw.githubusercontent.com/jsonmaur/namor/master/assets/logo.png">
     <br> <br> <br>
     <a href="https://travis-ci.org/jsonmaur/namor"><img src="https://travis-ci.org/jsonmaur/namor.svg?branch=master" alt="Build Status"></a>
     <a href="https://coveralls.io/github/jsonmaur/namor?branch=master"><img src="https://coveralls.io/repos/github/jsonmaur/namor/badge.svg?branch=master" alt="Coverage Status"></a>
@@ -67,7 +67,7 @@ primal-attack-kick
 
 ## Word Stats
 
-The following stats can help you make a decision on how many trailing numbers to use. This data is based on the words we have in our dictionary files.
+The following stats can help you make a decision on how many trailing numbers to use. This data is based on the number of words we have in our dictionary files.
 
 - 1-word combinations: 1,319
 - 2-word combinations: 3,016,553
