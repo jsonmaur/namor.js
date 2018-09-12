@@ -1,6 +1,6 @@
 {
   "name": "namor",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A domain-safe name generator",
   "author": "Jason Maurer",
   "license": "MIT",
@@ -36,7 +36,7 @@
     "build:node": "rm -rf dist && babel src -d dist",
     "build": "npm-run-all build:*",
     "watch": "npm run build:node -- -w -s",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
