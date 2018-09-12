@@ -1,9 +1,13 @@
-.nyc_output
+# system
+.DS_Store
+*.swp
+
+# node
 node_modules
+npm-*.log
+
+# app
+.nyc_output
 dist
 coverage
-
-.DS_Store
-npm-debug.log
 data.json
-*.swp

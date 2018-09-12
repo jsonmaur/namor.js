@@ -27,8 +27,8 @@ describe('unit: random', () => {
     try {
       random.randomNumber()
     } catch (err) {
-      expect(err).to.not.be.null
+      expect(err).to.be.an.instanceof(Error)
     }
-    expect(random.randomNumber.bind(null, 0)).to.throw
+    expect(random.randomNumber.bind(null, 0)).to.throw(Error)
   })
 })

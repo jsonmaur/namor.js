@@ -7,7 +7,7 @@
     <br> <br> <br>
 </div>
 
-A name generator for Node that generates random, url-friendly names. This comes in handy if you need to generate unique subdomains (like Heroku does), or unique names for anything else. It can check against a blacklist to prevent malicious subdomains, and if manly mode is enabled (for those who understand its importance), only names of a rugged nature will be generated.
+A name generator for Node that generates random, url-friendly names. This comes in handy if you need to generate unique subdomains (like Heroku does), or unique names for anything else. It can check against a reserved word list to prevent malicious subdomains, and if manly mode is enabled (for those who understand its importance), only names of a rugged nature will be generated.
 
 > *Please Note: Generated names are not always guaranteed to be unique. To reduce the chances of collision, you can increase the length of the trailing number ([see here for collision stats](#collision)). Always be sure to check your database before assuming a generated value is unique.*
 
@@ -78,14 +78,14 @@ Generates a new name, in all its glory.
 
 ### .isValid (name:String, options:Object)
 
-Checks whether a name is a valid for use as a subdomain. Can also check the name against a [blacklist](data/blacklist.txt) if specified.
+Checks whether a name is a valid for use as a subdomain. Can also check the name against a [reserved word list](data/reserved.txt) to prevent malicious subdomains.
 
 - **name** - The name to check.
 
   > Type: `string`
 
 - **options**
-  - **blacklist** - Whether to check the name against the [blacklist](data/blacklist.txt), which is a predefined set of reserved subdomains as well as vulgar language.
+  - **reserved** - Whether to check the name against the [reserved word list](data/reserved.txt), which is a predefined set of subdomains that should remain private.
 
     > Type: `boolean`  
     > Default: false

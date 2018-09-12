@@ -40,4 +40,3 @@ glob(`${dataPath}/**/*.txt`, (err, files) => {
   const output = path.resolve(__dirname, '../../data.json')
   fs.writeFileSync(output, JSON.stringify(data))
 })
-

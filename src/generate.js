@@ -40,20 +40,20 @@ export function getPattern (words = 2) {
   let pattern
   switch (words) {
     case 1:
-      pattern = 'noun'
+      pattern = ['noun']
       break
     case 2:
-      pattern = randomFromArray(['adjective|noun', 'noun|verb'])
+      pattern = randomFromArray([['adjective', 'noun'], ['noun', 'verb']])
       break
     case 3:
-      pattern = 'adjective|noun|verb'
+      pattern = ['adjective', 'noun', 'verb']
       break
     case 4:
-      pattern = 'adjective|noun|noun|verb'
+      pattern = ['adjective', 'noun', 'noun', 'verb']
       break
   }
 
-  return pattern.split('|')
+  return pattern
 }
 
 /**
