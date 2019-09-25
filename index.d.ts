@@ -24,6 +24,7 @@ declare module 'namor' {
 
   /**
    * Generates a new name, in all its glory.
+   * @param options
    */
   export function generate(options?: Partial<GenerateOptions>): string
 
