@@ -30,7 +30,7 @@
     "node": ">=6"
   },
   "main": "dist/index.js",
-  "types": "index.d.ts"
+  "types": "index.d.ts",
   "scripts": {
     "test:lint": "standard --verbose | snazzy",
     "test:unit": "nyc mocha test -r @babel/register",
