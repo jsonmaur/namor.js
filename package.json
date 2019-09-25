@@ -21,6 +21,7 @@
   "files": [
     "assets/",
     "dist/",
+    "index.d.ts",
     "data.json",
     "license",
     "readme.md"
@@ -29,6 +30,7 @@
     "node": ">=6"
   },
   "main": "dist/index.js",
+  "types": "index.d.ts"
   "scripts": {
     "test:lint": "standard --verbose | snazzy",
     "test:unit": "nyc mocha test -r @babel/register",
