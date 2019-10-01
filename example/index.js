@@ -3,7 +3,7 @@ const url = require('url')
 const namor = require('namor')
 
 const server = http.createServer((req, res) => {
-  const { query } = url.parse(req.url, true)
+  const { query } = url.parse(req.url, true) // eslint-disable-line
 
   const payload = JSON.stringify({
     generated_name: namor.generate({
