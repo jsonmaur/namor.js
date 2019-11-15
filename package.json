@@ -30,7 +30,7 @@
 	"main": "dist/index.js",
 	"scripts": {
 		"clean": "rm -rf dist coverage src/_data.ts",
-		"prettier": "prettier './**/*.{ts,json,yml,md}'",
+		"prettier": "prettier './**/*.{ts,js,json,yml,md}'",
 		"format": "npm run prettier -- --write",
 		"format:check": "npm run prettier -- --check",
 		"pretest": "npm run build:data",
