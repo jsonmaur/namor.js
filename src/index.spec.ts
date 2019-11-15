@@ -1,4 +1,4 @@
-import namor from "./index"
+import * as namor from "./index"
 
 test("exports", async () => {
 	expect(namor.generate).toBeInstanceOf(Function)
