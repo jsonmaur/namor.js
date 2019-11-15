@@ -1,11 +1,15 @@
 {
-	"name": "namor-example",
-	"version": "1.0.0",
-	"license": "MIT",
+	"private": true,
+	"main": "index.js",
 	"scripts": {
-		"start": "node index.js"
+		"start": "node index.js",
+		"deploy": "now --prod"
 	},
 	"dependencies": {
 		"namor": "*"
+	},
+	"devDependencies": {
+		"@now/node-server": "0.8.2",
+		"now": "16.5.2"
 	}
 }
