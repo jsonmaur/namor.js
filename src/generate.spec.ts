@@ -25,6 +25,8 @@ it("default()", () => {
 	expect(generate.default({ words: 0 })).toMatch(/^[a-z0-9]*$/)
 	expect(generate.default()).toMatch(/^[a-z]*-[a-z]*-[a-z0-9]{5}$/)
 	expect(generate.default({ words: 1 })).toMatch(/^[a-z]*-[a-z0-9]{5}$/)
+	// @ts-ignore
+	expect(generate.default({ words: "1" })).toMatch(/^[a-z]*-[a-z0-9]{5}$/)
 	expect(generate.default({ words: 2 })).toMatch(
 		/^[a-z]*-[a-z]*-[a-z0-9]{5}$/,
 	)
@@ -37,6 +39,10 @@ it("default()", () => {
 	expect(() => generate.default({ words: 5 })).toThrow(TypeError)
 	expect(generate.default({ saltLength: 0 })).toMatch(/^[a-z]*-[a-z]*$/)
 	expect(generate.default({ saltLength: 1 })).toMatch(
+		/^[a-z]*-[a-z]*-[a-z0-9]{1}$/,
+	)
+	// @ts-ignore
+	expect(generate.default({ saltLength: "1" })).toMatch(
 		/^[a-z]*-[a-z]*-[a-z0-9]{1}$/,
 	)
 	expect(generate.default({ saltLength: 20 })).toMatch(

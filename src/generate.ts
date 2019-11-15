@@ -86,10 +86,12 @@ export default function(opts: Options = {}) {
 		throw new TypeError("Word count must be between 1-4")
 	}
 
-	opts.words = opts.words !== undefined ? opts.words : 2
 	opts.separator = opts.separator || "-"
+	opts.words = Number(opts.words !== undefined ? opts.words : 2)
 	opts.saltType = opts.saltType || "mixed"
-	opts.saltLength = opts.saltLength !== undefined ? opts.saltLength : 5
+	opts.saltLength = Number(
+		opts.saltLength !== undefined ? opts.saltLength : 5,
+	)
 
 	const dictionary = opts.subset ? data[opts.subset] : data
 	const salt =
