@@ -7,7 +7,6 @@ node_modules
 npm-*.log
 
 # app
-.nyc_output
 dist
 coverage
-data.json
+src/_data.ts

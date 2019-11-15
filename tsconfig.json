@@ -1,0 +1,16 @@
+{
+	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules", "**/*.spec.ts"],
+	"compilerOptions": {
+		"outDir": "dist",
+		"module": "commonjs",
+		"declaration": true,
+		"strict": true,
+		"esModuleInterop": true,
+		"noEmitOnError": true,
+		"listEmittedFiles": true,
+		"removeComments": true,
+		"noUnusedLocals": true,
+		"forceConsistentCasingInFileNames": true
+	}
+}
