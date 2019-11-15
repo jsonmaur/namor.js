@@ -7,7 +7,7 @@
     <br> <br> <br>
 </div>
 
-A name generator for Javascript that generates random, url-friendly names. This comes in handy if you need to generate unique subdomains (like Heroku does), or unique names for anything else. It can check against a reserved word list to prevent malicious subdomains, and generate names of a rugged nature.
+A name generator for Node that generates random, url-friendly names. This comes in handy if you need to generate unique subdomains (like Heroku does), or unique names for anything else. It can check against a reserved word list to prevent malicious subdomains, and generate names of a rugged nature.
 
 > _Please Note: Generated names are not always guaranteed to be unique. To reduce the chances of collision, you can increase the length of the trailing number ([see here for collision stats](#collision)). Always be sure to check your database before assuming a generated value is unique._
 
