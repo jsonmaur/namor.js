@@ -1,15 +1,9 @@
 {
 	"private": true,
-	"main": "index.js",
 	"scripts": {
-		"start": "node index.js",
-		"deploy": "now --prod"
+		"start": "node index.js"
 	},
 	"dependencies": {
 		"namor": "*"
-	},
-	"devDependencies": {
-		"@now/node-server": "0.8.2",
-		"now": "16.5.2"
 	}
 }

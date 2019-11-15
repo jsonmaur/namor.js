@@ -30,7 +30,7 @@ const name = namor.generate({ words: 3, saltLength: 0 })
 const name = namor.generate({ subset: "manly" })
 ```
 
-[See it in action here](https://namor-example.now.sh) or [experience manly mode](https://namor-example.now.sh/?subset=manly&saltLength=0).
+[See it in action here](https://namor-example.herokuapp.com) or [experience manly mode](https://namor-example.herokuapp.com/?subset=manly&saltLength=0).
 
 <a name="collision"></a>
 

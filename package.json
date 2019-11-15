@@ -29,6 +29,7 @@
 	],
 	"main": "dist/index.js",
 	"scripts": {
+		"deploy": "git subtree push --prefix example heroku master",
 		"clean": "rm -rf dist coverage src/_data.ts",
 		"prettier": "prettier './**/*.{ts,js,json,yml,md}'",
 		"format": "npm run prettier -- --write",
