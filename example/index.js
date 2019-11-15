@@ -8,9 +8,9 @@ const server = http.createServer((req, res) => {
   const payload = JSON.stringify({
     generated_name: namor.generate({
       words: query.words || 2,
-      numbers: query.numbers || 2,
-      char: query.char,
-      manly: query.manly
+      saltLength: query.saltLength || 2,
+      separator: query.separator,
+      subset: query.subset,
     })
   }, null, 2)
 
