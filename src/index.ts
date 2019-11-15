@@ -16,7 +16,7 @@ interface Data {
 	manly: DataManly
 }
 
-module.exports = {
+export = {
 	generate,
 	validate,
 
