@@ -20,10 +20,10 @@ $ npm install namor --save
 ```javascript
 const namor = require("namor")
 
-/* defaults to two words and 2 trailing numbers */
+/* defaults to two words and 5 random characters */
 const name = namor.generate()
 
-/* generate 3 words and no trailing numbers */
+/* generate 3 words and no random characters */
 const name = namor.generate({ words: 3, saltLength: 0 })
 
 /* enable manly mode */
