@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
 
 	res.setHeader("Content-Type", "application/json")
 	res.setHeader("Content-Length", Buffer.byteLength(payload))
-	res.setHeader("Access-Control-Allow-Headers", "*")
+	res.setHeader("Access-Control-Allow-Origin", "*")
 
 	res.end(payload)
 })
