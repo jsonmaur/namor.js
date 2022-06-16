@@ -2,13 +2,15 @@ const http = require("http")
 const url = require("url")
 const namor = require("namor")
 
+const maxWords = 4
+
 const server = http.createServer((req, res) => {
 	const { query } = url.parse(req.url, true)
 
 	const payload = JSON.stringify(
 		{
 			generated_name: namor.generate({
-				words: query.words,
+				words: Math.min(query.words, maxWords),
 				saltLength: query.saltLength,
 				saltType: query.saltType,
 				separator: query.separator,
