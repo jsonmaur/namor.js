@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => {
 })
 
 const port = process.env.PORT || 5000
-const host = process.env.HOST || "0.0.0.0"
+const host = process.env.HOST || "localhost"
 
 server.listen(port, host, () => {
 	console.log(`=> running at http://${host}:${port}`)
