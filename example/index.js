@@ -3,6 +3,7 @@ const url = require("url")
 const namor = require("namor")
 
 const maxWords = 4
+const maxSaltLength = 20
 
 const server = http.createServer((req, res) => {
 	const { query } = url.parse(req.url, true)
@@ -11,7 +12,7 @@ const server = http.createServer((req, res) => {
 		{
 			generated_name: namor.generate({
 				words: Math.min(query.words, maxWords),
-				saltLength: query.saltLength,
+				saltLength: Math.min(query.saltLength, maxSaltLength),
 				saltType: query.saltType,
 				separator: query.separator,
 				subset: query.subset,
