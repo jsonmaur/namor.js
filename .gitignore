@@ -10,4 +10,4 @@ npm-*.log
 dist
 coverage
 src/_data.ts
-demo/package-lock.json
+example/package-lock.json
