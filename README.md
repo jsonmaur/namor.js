@@ -1,13 +1,21 @@
-<div align="center">
-    <br>
-    <img src="https://raw.githubusercontent.com/jsonmaur/namor/master/assets/logo.png">
-    <br> <br> <br>
-    <a href="https://travis-ci.org/jsonmaur/namor"><img src="https://travis-ci.org/jsonmaur/namor.svg?branch=master" alt="Build Status"></a>
-    <a href="https://coveralls.io/github/jsonmaur/namor?branch=master"><img src="https://coveralls.io/repos/github/jsonmaur/namor/badge.svg?branch=master" alt="Coverage Status"></a>
-    <br> <br> <br>
-</div>
+# Namor.js
 
-A name generator for Node that generates random, url-friendly names. This comes in handy if you need to generate unique subdomains (like Heroku does), or unique names for anything else. It can check against a reserved word list to prevent malicious subdomains, and generate names of a rugged nature.
+<a href="https://github.com/jsonmaur/namor.js/actions/workflows/test.yml">
+  <img alt="Test Status" src="https://img.shields.io/github/actions/workflow/status/jsonmaur/namor.js/test.yml?label=test&style=plastic">
+</a>
+
+<a href="https://www.npmjs.com/package/namor">
+  <img alt="NPM Version" src="https://img.shields.io/npm/v/namor?style=plastic">
+</a>
+
+Namor.js is a name generator for Node that creates random, url-friendly names. This comes in handy if you need to generate unique subdomains like many PaaS/SaaS providers do, or unique names for anything else.
+
+* 🔒 Subdomain validation with reserved names
+* 📚 Custom dictionaries and reserved word lists
+* 🏋️ Hilarious alternate dictionaries
+* ✅ 100% test coverage
+
+[See it in action](https://namor.jsonmaur.com). Namor is also available for [Elixir](https://github.com/jsonmaur/namor.ex).
 
 > _Please Note: Generated names are not always guaranteed to be unique. To reduce the chances of collision, you can increase the length of the trailing number ([see here for collision stats](#collision)). Always be sure to check your database before assuming a generated value is unique._
 
@@ -20,35 +28,35 @@ $ npm install namor --save
 ```javascript
 const namor = require("namor")
 
-/* defaults to two words and 5 random characters */
-const name = namor.generate()
+namor.generate()
+// "sandwich-invent"
 
-/* generate 3 words and no random characters */
-const name = namor.generate({ words: 3, saltLength: 0 })
+namor.generate({ salt: 5 })
+// "sandwich-invent-s86uo"
 
-/* enable manly mode */
-const name = namor.generate({ subset: "manly" })
+namor.generate({ words: 3, dictionary: "rugged" })
+// "savage-whiskey-stain"
 ```
-
-[See it in action here](https://namor-example.herokuapp.com) or [experience manly mode](https://namor-example.herokuapp.com/?subset=manly&saltLength=0).
 
 <a name="collision"></a>
 
 ## Collision Stats
 
-The following stats give you the total number of permutations based on the word count (without a salt), and can help you make a decision on how long to make your salt. This data is based on the number of words we currently have in our [dictionary files](data).
+The following stats give you the total number of permutations based on the word count (without a salt), and can help you make a decision on how long to make your salt. This data is based on the number of words we currently have in our [dictionary files](https://github.com/jsonmaur/namor.js/tree/master/dict).
 
--   1-word combinations: 1,319
--   2-word combinations: 3,016,553
--   3-word combinations: 1,720,200,230
--   4-word combinations: 2,268,944,103,370
+##### `default` dictionary
 
-##### Subset: Manly
+- 1-word combinations: 7,948
+- 2-word combinations: 11,386,875
+- 3-word combinations: 12,382,548,750
+- 4-word combinations: 23,217,278,906,250
 
--   1-word combinations: 282
--   2-word combinations: 110,826
--   3-word combinations: 9,487,044
--   4-word combinations: 2,675,346,408
+##### `rugged` dictionary
+
+- 1-word combinations: 735
+- 2-word combinations: 127,400
+- 3-word combinations: 14,138,880
+- 4-word combinations: 3,958,886,400
 
 ## API
 
@@ -84,4 +92,4 @@ Allows access to the raw dictionary data. You probably won't ever use this, but 
 
 ## License
 
-[MIT](license) © [Jason Maurer](https://maur.co)
+[MIT](LICENSE) © [Jason Maurer](https://jsonmaur.com)

@@ -7,7 +7,6 @@ bacon
 badass
 ballistic
 balls
-banner
 bar
 barbecue
 barfight
@@ -160,7 +159,6 @@ legend
 lightning
 lion
 lock
-log
 love
 lumberjack
 machete

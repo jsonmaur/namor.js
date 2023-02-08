@@ -1,6 +1,5 @@
 # system
 .DS_Store
-*.swp
 
 # node
 node_modules
@@ -9,5 +8,4 @@ npm-*.log
 # app
 dist
 coverage
-src/_data.ts
-example/package-lock.json
+src/_dict.ts
