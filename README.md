@@ -121,8 +121,9 @@ const reservedWords = namor.getDictFile("reserved.txt", dictionaryPath)
 namor.valid_subdomain("value", { reserved: reservedWords })
 ```
 
-**_A NOTE ON CUSTOM DICTIONARIES:_**  
-**_Reading large word lists can be slow, so it's very highly recommended to only call `getDict` and `getDictFile` once when the application starts._**
+#### A note on custom dictionaries
+
+Reading large word lists can be slow, so it's very highly recommended to only call `getDict` and `getDictFile` once when the application starts.
 
 ## License
 
