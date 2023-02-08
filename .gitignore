@@ -8,4 +8,3 @@ npm-*.log
 # app
 dist
 coverage
-src/_dict.ts

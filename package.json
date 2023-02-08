@@ -1,79 +1,65 @@
 {
-	"name": "namor",
-	"version": "2.0.4",
-	"description": "A domain-safe name generator",
-	"author": "Jason Maurer",
-	"license": "MIT",
-	"homepage": "https://github.com/jsonmaur/namor#readme",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/jsonmaur/namor.git"
-	},
-	"engines": {
-		"node": ">=6"
-	},
-	"keywords": [
-		"name",
-		"subdomain",
-		"generator",
-		"random",
-		"url",
-		"friendly",
-		"manly"
-	],
-	"files": [
-		"assets/",
-		"dist/",
-		"license",
-		"readme.md"
-	],
-	"main": "dist/index.js",
-	"scripts": {
-		"deploy": "git subtree push --prefix example heroku master",
-		"clean": "rm -rf dist coverage src/_data.ts",
-		"prettier": "prettier './**/*.{ts,js,json,yml,md}'",
-		"format": "npm run prettier -- --write",
-		"format:check": "npm run prettier -- --check",
-		"pretest": "npm run build:data",
-		"test": "npm run format:check && jest --coverage",
-		"coveralls": "cat coverage/lcov.info | coveralls",
-		"prebuild": "npm run clean && npm run build:data",
-		"build": "tsc",
-		"build:data": "ts-node data/build",
-		"prepare": "npm run build"
-	},
-	"dependencies": {
-		"crypto-extra": "1.0.1"
-	},
-	"devDependencies": {
-		"@types/glob": "7.1.1",
-		"@types/jest": "24.0.23",
-		"@types/node": "12.12.7",
-		"coveralls": "3.0.7",
-		"jest": "24.9.0",
-		"prettier": "1.19.1",
-		"ts-jest": "24.1.0",
-		"ts-node": "8.5.2",
-		"typescript": "3.7.2"
-	},
-	"prettier": {
-		"semi": false,
-		"useTabs": true,
-		"trailingComma": "all",
-		"arrowParens": "always"
-	},
-	"jest": {
-		"testEnvironment": "node",
-		"transform": {
-			"\\.ts$": "ts-jest"
-		},
-		"collectCoverageFrom": [
-			"src/**/*.ts",
-			"!src/_data.ts"
-		],
-		"coverageReporters": [
-			"lcov",
-			"text"
-		]
-	}
+  "name": "namor",
+  "version": "2.0.4",
+  "description": "A subdomain-safe name generator",
+  "author": "Jason Maurer",
+  "license": "MIT",
+  "homepage": "https://github.com/jsonmaur/namor.js#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsonmaur/namor.js.git"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "keywords": [
+    "name",
+    "subdomain",
+    "generator",
+    "random",
+    "url",
+    "friendly",
+    "manly",
+    "rugged"
+  ],
+  "files": [
+    "dict/",
+    "dist/",
+    "LICENSE",
+    "README.md"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "prettier": "prettier 'src/**/*.{ts,js}'",
+    "format": "npm run prettier -- --write",
+    "test": "npm run prettier -- --check && jest",
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "crypto-extra": "1.0.1"
+  },
+  "devDependencies": {
+    "@types/glob": "8.0.1",
+    "@types/jest": "29.4.0",
+    "@types/node": "18.13.0",
+    "jest": "29.4.2",
+    "prettier": "2.8.4",
+    "ts-jest": "29.0.5",
+    "ts-node": "10.9.1",
+    "typescript": "4.9.5"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {
+      "\\.ts$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ]
+  }
 }

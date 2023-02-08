@@ -15,18 +15,18 @@ Namor.js is a name generator for Node that creates random, url-friendly names. T
 * 🏋️ Hilarious alternate dictionaries
 * ✅ 100% test coverage
 
-[See it in action](https://namor.jsonmaur.com). Namor is also available for [Elixir](https://github.com/jsonmaur/namor.ex).
+[See it in action](https://namor.jsonmaur.com). Also available for [Elixir](https://github.com/jsonmaur/namor.ex).
 
 > _Please Note: Generated names are not always guaranteed to be unique. To reduce the chances of collision, you can increase the length of the trailing number ([see here for collision stats](#collision)). Always be sure to check your database before assuming a generated value is unique._
 
 ## Getting Started
 
-```bash
-$ npm install namor --save
+```console
+$ npm install namor
 ```
 
 ```javascript
-const namor = require("namor")
+import namor from "namor"
 
 namor.generate()
 // "sandwich-invent"
@@ -66,25 +66,63 @@ Generates a new name, in all its glory.
 
 -   **options**
 
-    -   **words** `default: 2` The number of words to include in the generated name. Must be a positive integer no higher than 4, or 0 to only generate a salt.
+    -   **words** `default: 2` The number of words to include in the generated name. Must be a positive integer no higher than 4.
 
     -   **separator** `default: "-"` The character to use between words when generating a name.
 
-    -   **saltLength** `default: 5` The number of characters in the trailing salt. Must be a positive integer or `0` to exclude a trailing number.
+    -   **salt** `default: 0` The number of characters in the trailing salt. Must be a positive integer.
 
-    -   **saltType** `default: "mixed"` The type of characters to use for the trailing salt. Can be `number`, `string`, or `mixed`.
+    -   **saltType** `default: "mixed"` The type of characters to use for the trailing salt. Can be `numbers`, `letters`, or `mixed`.
 
-    -   **subset** Whether to use a subset dictionary rather than the default. Be aware this limits the number of dictionary words, creating a higher chance of collision. Only valid value at the moment is `"manly"`.
+    -   **dictionary** `default: "default"` The dictionary to use. Can be set to `"default"`, `"rugged"`, or a custom dictionary using [`getDict`](#getdict-namestring-basepathstring).
 
-### .validate (name:String, options:Object)
+### .valid_subdomain (name:String, options:Object)
 
-Checks whether a string is valid for use as a subdomain, including length (max of 63 characters) and checking against a list of [reserved subdomains](data/default/reserved.txt) to prevent shady stuff.
+Checks whether a string is valid for use as a subdomain including special characters, length (max of 63 characters), and checking against a list of [reserved subdomains](dict/reserved.txt).
 
 -   **name** - The name to check.
 
 -   **options**
 
-    -   **reserved** `default: false` Whether to check the name against the [reserved word list](data/default/reserved.txt), which is a predefined set of subdomains that should remain private.
+    -   **reserved** `default: false` Whether to check the name against the [reserved word list](dict/reserved.txt), which is a predefined set of values that shouldn't be offered as subdomains. This can also be set to an array of strings for a custom reserved word list (consider using [`getDictFile`](#getdictfile-namestring-basepathstring)).
+
+### .getDict (name:String, basePath:String)
+
+Reads word lists from a base folder and returns a parsed dictionary object. A dictionary folder is expected to be a directory containing three files: `adjectives.txt`, `nouns.txt`, and `verbs.txt`. Each file should have one word per line with no duplicate words. If `basePath` is not defined, it will look for the dictionary in Namor's internal dictionary folder. Use this function to define a custom dictionary like so:
+
+```
+ ┌── dictionaries/
+ │ ┌── custom/
+ │ │ ┌── adjectives.txt
+ │ │ ├── nouns.txt
+ │ │ └── verbs.txt
+```
+
+```javascript
+const dictionaryPath = path.resolve(__dirname, "dictionaries")
+const dictionary = namor.getDict("custom", dictionaryPath)
+
+namor.generate({ dictionary: dictionary })
+```
+
+### .getDictFile (name:String, basePath:String)
+
+Reads a single word file with one word per line, and returns the words trimmed and parsed into an array. If `basePath` is not defined, it will look for the dictionary in Namor's internal dictionary folder. Use this function to define a custom reserved word list like so:
+
+```
+ ┌── dictionaries/
+ │ ┌── reserved.txt
+```
+
+```javascript
+const dictionaryPath = path.resolve(__dirname, "dictionaries")
+const reservedWords = namor.getDictFile("reserved.txt", dictionaryPath)
+
+namor.valid_subdomain("value", { reserved: reservedWords })
+```
+
+**_A NOTE ON CUSTOM DICTIONARIES:_**  
+**_Reading large word lists can be slow, so it's very highly recommended to only call `getDict` and `getDictFile` once when the application starts._**
 
 ### .rawData
 
