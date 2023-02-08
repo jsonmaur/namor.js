@@ -17,20 +17,23 @@ export interface SubdomainOptions {
   reserved?: boolean | string[];
 }
 
-export const data: Dictionaries = {
+export const dictionaries: Dictionaries = {
   reserved: getDictFile("reserved.txt"),
   default: getDict("default"),
   rugged: getDict("rugged"),
 };
 
-function valid_subdomain(name: string, opts: SubdomainOptions = {}): boolean {
+export function valid_subdomain(
+  name: string,
+  opts: SubdomainOptions = {}
+): boolean {
   const result = /^[\w](?:[\w-]{0,61}[\w])?$/.test(name);
 
   if (opts.reserved) {
     const strippedName = name.replace(/[^a-zA-Z0-9]/, "");
     const reservedWords = Array.isArray(opts.reserved)
       ? opts.reserved
-      : data.reserved;
+      : dictionaries.reserved;
 
     return result && reservedWords.indexOf(strippedName) === -1;
   }
@@ -38,16 +41,22 @@ function valid_subdomain(name: string, opts: SubdomainOptions = {}): boolean {
   return result;
 }
 
+exports.generate = generate;
+exports.getDict = getDict;
+exports.getDictFile = getDictFile;
+
+/* deprecated */
+export const rawData = dictionaries;
+export function validate(name: string, opts?: SubdomainOptions): boolean {
+  console.log("namor: `validate` has been renamed to `valid_subdomain`");
+  return valid_subdomain(name, opts);
+}
+
 export default {
   generate,
   getDict,
   getDictFile,
   valid_subdomain,
-  rawData: data as Dictionaries,
-
-  /* deprecated methods */
-  validate: (name: string, opts?: any) => {
-    console.log("namor: `validate` has been renamed to `valid_subdomain`");
-    return valid_subdomain(name, opts);
-  },
+  validate,
+  rawData: dictionaries,
 };

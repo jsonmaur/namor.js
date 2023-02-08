@@ -1,5 +1,5 @@
 import crypto from "crypto-extra";
-import { data, Dictionary } from "./index";
+import { dictionaries, Dictionary } from "./index";
 
 enum Word {
   Adjective = "adjectives",
@@ -128,8 +128,8 @@ export function generate(opts: Options = {}) {
     typeof opts.dictionary === "object" && opts.dictionary !== null
       ? opts.dictionary
       : opts.dictionary
-      ? data[opts.dictionary]
-      : data.default;
+      ? dictionaries[opts.dictionary]
+      : dictionaries.default;
 
   return getPattern(opts.words)
     .map((type) => randomFromArray(dictionary[type]))

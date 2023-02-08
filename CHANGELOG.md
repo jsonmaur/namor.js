@@ -15,6 +15,7 @@
 - Deprecated `subset` option in `generate()`, use `dictionary` instead
 - Deprecated `manly` dictionary, use `rugged` instead
 - Deprecated `validate()`, use `valid_subdomain()` instead
+- Deprecated `rawData` access
 
 ##### Other Updates
 

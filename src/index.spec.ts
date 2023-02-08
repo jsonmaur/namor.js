@@ -1,4 +1,4 @@
-import namor from "./index";
+import namor, { dictionaries } from "./index";
 
 test("exports", async () => {
   expect(namor.generate).toBeInstanceOf(Function);
@@ -6,15 +6,16 @@ test("exports", async () => {
   expect(namor.getDictFile).toBeInstanceOf(Function);
   expect(namor.valid_subdomain).toBeInstanceOf(Function);
 
-  expect(namor.rawData.reserved).toContain("about");
-  expect(namor.rawData.default.adjectives).toContain("aback");
-  expect(namor.rawData.default.nouns).toContain("ability");
-  expect(namor.rawData.default.verbs).toContain("abash");
-  expect(namor.rawData.rugged.adjectives).toContain("abandoned");
-  expect(namor.rawData.rugged.nouns).toContain("aggression");
-  expect(namor.rawData.rugged.verbs).toContain("alert");
+  expect(dictionaries.reserved).toContain("about");
+  expect(dictionaries.default.adjectives).toContain("aback");
+  expect(dictionaries.default.nouns).toContain("ability");
+  expect(dictionaries.default.verbs).toContain("abash");
+  expect(dictionaries.rugged.adjectives).toContain("abandoned");
+  expect(dictionaries.rugged.nouns).toContain("aggression");
+  expect(dictionaries.rugged.verbs).toContain("alert");
 
   /* deprecated */
+  expect(namor.rawData.reserved).toContain("about");
   expect(namor.validate).toBeInstanceOf(Function);
 });
 

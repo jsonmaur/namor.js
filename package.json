@@ -29,11 +29,12 @@
     "README.md"
   ],
   "main": "dist/index.js",
+  "type": "commonjs",
   "scripts": {
     "prettier": "prettier 'src/**/*.{ts,js}'",
     "format": "npm run prettier -- --write",
     "test": "npm run prettier -- --check && jest",
-    "build": "tsc",
+    "build": "rm -rf dist && tsc",
     "prepare": "npm run build"
   },
   "dependencies": {

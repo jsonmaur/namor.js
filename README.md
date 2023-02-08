@@ -124,10 +124,6 @@ namor.valid_subdomain("value", { reserved: reservedWords })
 **_A NOTE ON CUSTOM DICTIONARIES:_**  
 **_Reading large word lists can be slow, so it's very highly recommended to only call `getDict` and `getDictFile` once when the application starts._**
 
-### .rawData
-
-Allows access to the raw dictionary data. You probably won't ever use this, but it's there if you need it.
-
 ## License
 
 [MIT](LICENSE) © [Jason Maurer](https://jsonmaur.com)
