@@ -10,7 +10,7 @@
     "url": "git+https://github.com/jsonmaur/namor.js.git"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   },
   "keywords": [
     "name",
