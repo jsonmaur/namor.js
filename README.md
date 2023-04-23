@@ -1,12 +1,4 @@
-# Namor.js
-
-<a href="https://github.com/jsonmaur/namor.js/actions/workflows/test.yml">
-  <img alt="Test Status" src="https://img.shields.io/github/actions/workflow/status/jsonmaur/namor.js/test.yml?label=test&style=plastic">
-</a>
-
-<a href="https://www.npmjs.com/package/namor">
-  <img alt="NPM Version" src="https://img.shields.io/npm/v/namor?style=plastic">
-</a>
+<a href="https://github.com/jsonmaur/namor.js/actions/workflows/test.yml"><img alt="Test Status" src="https://img.shields.io/github/actions/workflow/status/jsonmaur/namor.js/test.yml?label=&style=for-the-badge&logo=github"></a> <a href="https://www.npmjs.com/package/namor"><img alt="NPM Version" src="https://img.shields.io/npm/v/namor?style=for-the-badge&label=&logo=npm&logoColor=white" /></a>
 
 Namor.js is a name generator for Node that creates random, url-friendly names. This comes in handy if you need to generate unique subdomains like many PaaS/SaaS providers do, or unique names for anything else.
 
@@ -124,7 +116,3 @@ namor.valid_subdomain("value", { reserved: reservedWords })
 #### A note on custom dictionaries
 
 Reading large word lists can be slow, so it's very highly recommended to only call `getDict` and `getDictFile` once when the application starts.
-
-## License
-
-[MIT](LICENSE) © [Jason Maurer](https://jsonmaur.com)
