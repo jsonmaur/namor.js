@@ -1,21 +1,24 @@
-<a href="https://github.com/jsonmaur/namor.js/actions/workflows/test.yml"><img alt="Test Status" src="https://img.shields.io/github/actions/workflow/status/jsonmaur/namor.js/test.yml?label=&style=for-the-badge&logo=github"></a> <a href="https://www.npmjs.com/package/namor"><img alt="NPM Version" src="https://img.shields.io/npm/v/namor?style=for-the-badge&label=&logo=npm&logoColor=white" /></a>
+# Namor.js
 
-Namor.js is a name generator for Node that creates random, url-friendly names. This comes in handy if you need to generate unique subdomains like many PaaS/SaaS providers do, or unique names for anything else.
+Namor.js is a name generator for Node that creates random, url-friendly names. This comes in handy if you need to generate unique subdomains like many PaaS/SaaS providers do, or unique names for anything else. Supports subdomain validation with reserved names, custom dictionaries and reserved word lists, alternate dictionaries, and more.
 
-* 🔒 Subdomain validation with reserved names
-* 📚 Custom dictionaries and reserved word lists
-* 🏋️ Hilarious alternate dictionaries
-* ✅ 100% test coverage
+Also available for [Elixir](https://github.com/jsonmaur/namor).
 
-[See it in action](https://namor.jsonmaur.com). Also available for [Elixir](https://github.com/jsonmaur/namor.ex).
+> _Please Note: Generated names are not always guaranteed to be unique. To reduce the chances of collision, you can increase the length of the trailing number ([see here for collision stats](#collision-stats)). Always be sure to check your database before assuming a generated value is unique._
 
-> _Please Note: Generated names are not always guaranteed to be unique. To reduce the chances of collision, you can increase the length of the trailing number ([see here for collision stats](#collision)). Always be sure to check your database before assuming a generated value is unique._
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+- [Collision Stats](#collision-stats)
+- [API](#api)
+- [Demo](https://namor.jsonmaur.com)
 
-## Getting Started
+## Installation
 
 ```console
 $ npm install namor
 ```
+
+## Getting Started
 
 ```javascript
 import namor from "namor"
@@ -29,8 +32,6 @@ namor.generate({ salt: 5 })
 namor.generate({ words: 3, dictionary: "rugged" })
 // "savage-whiskey-stain"
 ```
-
-<a name="collision"></a>
 
 ## Collision Stats
 
