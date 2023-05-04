@@ -2,7 +2,7 @@
 
 Namor.js is a name generator for Node that creates random, url-friendly names. This comes in handy if you need to generate unique subdomains like many PaaS/SaaS providers do, or unique names for anything else. Supports subdomain validation with reserved names, custom dictionaries and reserved word lists, alternate dictionaries, and more.
 
-Also available for [Elixir](https://github.com/jsonmaur/namor).
+[See a demo here.](https://namor.jsonmaur.com) Also available for [Elixir](https://github.com/jsonmaur/namor).
 
 > _Please Note: Generated names are not always guaranteed to be unique. To reduce the chances of collision, you can increase the length of the trailing number ([see here for collision stats](#collision-stats)). Always be sure to check your database before assuming a generated value is unique._
 
@@ -10,7 +10,6 @@ Also available for [Elixir](https://github.com/jsonmaur/namor).
 - [Getting Started](#getting-started)
 - [Collision Stats](#collision-stats)
 - [API](#api)
-- [Demo](https://namor.jsonmaur.com)
 
 ## Installation
 
