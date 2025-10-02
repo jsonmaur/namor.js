@@ -1,5 +1,9 @@
 ## Changelog for v3.0
 
+### v3.0.3
+
+- Removed another comma from dictionary
+
 ### v3.0.2
 
 - Removed commas from dictionary

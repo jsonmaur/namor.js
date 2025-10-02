@@ -3520,7 +3520,7 @@ solid
 solitary
 somatic
 somber
-some,
+some
 sonic
 sonly
 soothed
