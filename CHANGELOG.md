@@ -1,5 +1,9 @@
 ## Changelog for v3.0
 
+### v3.0.2
+
+- Removed commas from dictionary
+
 ### v3.0.1
 
 - Fixed CommonJS exports
